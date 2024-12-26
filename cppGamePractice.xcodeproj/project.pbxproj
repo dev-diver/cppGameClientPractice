@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BB9D90DA2D1D6F8700AD4023 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9D90D92D1D6F8700AD4023 /* main.cpp */; };
+		BB9D90E22D1D6FC300AD4023 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9D90E02D1D6FC300AD4023 /* Game.cpp */; };
+		BB9D90E52D1D75D200AD4023 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9D90E42D1D75D200AD4023 /* libSDL2-2.0.0.dylib */; };
+		BB9D90E62D1D75D200AD4023 /* libSDL2-2.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = BB9D90E42D1D75D200AD4023 /* libSDL2-2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -20,11 +23,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		BB9D90E72D1D75D200AD4023 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BB9D90E62D1D75D200AD4023 /* libSDL2-2.0.0.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BB9D90D62D1D6F8700AD4023 /* cppGamePractice */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cppGamePractice; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB9D90D92D1D6F8700AD4023 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		BB9D90E02D1D6FC300AD4023 /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		BB9D90E12D1D6FC300AD4023 /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		BB9D90E42D1D75D200AD4023 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../cppGame/External/SDL/lib/mac/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
+		BB9D90E82D1D779C00AD4023 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB9D90E52D1D75D200AD4023 /* libSDL2-2.0.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +62,7 @@
 			children = (
 				BB9D90D82D1D6F8700AD4023 /* cppGamePractice */,
 				BB9D90D72D1D6F8700AD4023 /* Products */,
+				BB9D90E32D1D74D200AD4023 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +78,19 @@
 			isa = PBXGroup;
 			children = (
 				BB9D90D92D1D6F8700AD4023 /* main.cpp */,
+				BB9D90E12D1D6FC300AD4023 /* Game.h */,
+				BB9D90E02D1D6FC300AD4023 /* Game.cpp */,
+				BB9D90E82D1D779C00AD4023 /* README.md */,
 			);
 			path = cppGamePractice;
+			sourceTree = "<group>";
+		};
+		BB9D90E32D1D74D200AD4023 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB9D90E42D1D75D200AD4023 /* libSDL2-2.0.0.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,6 +103,7 @@
 				BB9D90D22D1D6F8700AD4023 /* Sources */,
 				BB9D90D32D1D6F8700AD4023 /* Frameworks */,
 				BB9D90D42D1D6F8700AD4023 /* CopyFiles */,
+				BB9D90E72D1D75D200AD4023 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -120,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB9D90DA2D1D6F8700AD4023 /* main.cpp in Sources */,
+				BB9D90E22D1D6FC300AD4023 /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +278,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /opt/homebrew/include;
+				LIBRARY_SEARCH_PATHS = /opt/homebrew/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -253,6 +288,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /opt/homebrew/include;
+				LIBRARY_SEARCH_PATHS = /opt/homebrew/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
